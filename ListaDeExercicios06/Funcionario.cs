@@ -5,9 +5,16 @@ namespace ListaDeExercicios06
 {
     internal class Funcionario
     {
-        public string Nome;
-        public double SalarioBruto;
-        public double Impostos;
+        public string Nome { get; set; }
+        public double SalarioBruto { get; private set; }
+        public double Impostos { get; private set; }
+
+        public Funcionario(string nome, double salarioBruto, double impostos) 
+        {
+            Nome = nome;
+            SalarioBruto = salarioBruto;
+            Impostos = impostos;
+        }
 
         public void AumentarSalario(double porcentagem)
         {

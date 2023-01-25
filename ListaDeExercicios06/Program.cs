@@ -9,11 +9,11 @@ namespace ListaDeExercicios06
         {
             //Problema 0 = Retangulo
             
-            Retangulo r = new Retangulo();
-
             Console.WriteLine("Entre com a largura e altura do retângulo: ");
-            r.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            r.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            double largura = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            double altura = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            Retangulo r = new Retangulo(largura, altura);
 
             Console.WriteLine($"Área = {(r.Area()).ToString("F2", CultureInfo.InvariantCulture)}");
             Console.WriteLine($"Perímetro = {(r.Perimetro()).ToString("F2", CultureInfo.InvariantCulture)}");
@@ -21,14 +21,15 @@ namespace ListaDeExercicios06
             
             //Problema 1 = Funcionario
 
-            Funcionario f = new Funcionario();
-
             Console.Write("Nome: ");
-            f.Nome = Console.ReadLine();
+            string nome = Console.ReadLine();
             Console.Write("Salário Bruto: ");
-            f.SalarioBruto = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            double salarioBruto = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             Console.Write("Imposto: ");
-            f.Impostos = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            double impostos = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            
+            Funcionario f = new Funcionario(nome, salarioBruto, impostos);
+            
             Console.WriteLine($"\nFuncionario: {f}\n");
 
             Console.Write($"Digite a porcentagem para aumentar o salário: ");
@@ -39,14 +40,14 @@ namespace ListaDeExercicios06
             
             //Problema 2 = Aluno
 
-            Aluno a = new Aluno();
-
             Console.Write($"Nome do Aluno: ");
-            a.Nome = Console.ReadLine();
+            string nome2 = Console.ReadLine();
             Console.WriteLine("Digite as três notas do aluno:");
-            a.N1 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            a.N2 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            a.N3 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            double n1 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            double n2 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            double n3 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            Aluno a = new Aluno(nome2, n1, n2, n3);
 
             Console.WriteLine($"NOTA FINAL = {(a.NotaFinal()).ToString("F2", CultureInfo.InvariantCulture)}");
 

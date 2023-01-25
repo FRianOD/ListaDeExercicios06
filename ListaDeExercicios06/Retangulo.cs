@@ -4,21 +4,27 @@ namespace ListaDeExercicios06
 {
     internal class Retangulo
     {
-        public double A;
-        public double B;
+        public double L { get; private set; }
+        public double H { get; private set; }
+
+        public Retangulo(double l, double h)
+        {
+            L = l;
+            H = h;
+        }
 
         public double Area()
         {
-            return A * B;
+            return L * H;
         }
 
         public double Perimetro() 
         {
-            return ( 2 * A ) + ( 2 * B );
+            return ( 2 * L ) + ( 2 * H );
         }
         public double Diagonal() 
         {
-            return Math.Sqrt( A * A + B * B );
+            return Math.Sqrt( L * L + H * H );
         }
     }
 }
